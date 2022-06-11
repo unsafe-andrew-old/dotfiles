@@ -1,0 +1,51 @@
+window:
+  padding:
+    x: 12
+    y: 12
+background_opacity: 0.85
+
+font:
+  normal:
+    # There's no way back from this font
+    family: Iosevka
+    style: Regular
+
+cursor:
+  style:
+    shape: Beam
+
+key_bindings:
+  # Spawn new window at the same directory
+  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+
+shell:
+  program: /bin/fish
+
+# Inserted by this[https://github.com/egeesin/alacritty-color-export] script
+# BEGIN ACE
+colors:
+  primary:
+    background: '#0d0e0c'
+    foreground: '#c8b6b8'
+  cursor:
+    text:       '#0d0e0c'
+    cursor:     '#c8b6b8'
+  normal:
+    black:      '#0d0e0c'
+    red:        '#693733'
+    green:      '#6A4841'
+    yellow:     '#9F5B50'
+    blue:       '#C15A45'
+    magenta:    '#BE8961'
+    cyan:       '#E4966D'
+    white:      '#c8b6b8'
+  bright:
+    black:      '#8c7f80'
+    red:        '#693733'
+    green:      '#6A4841'
+    yellow:     '#9F5B50'
+    blue:       '#C15A45'
+    magenta:    '#BE8961'
+    cyan:       '#E4966D'
+    white:      '#c8b6b8'
+# END ACE

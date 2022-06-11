@@ -1,0 +1,51 @@
+-- vim: ft=haskell
+Config {
+    -- BEHAVIOUR
+    overrideRedirect = True,
+    lowerOnStart     = True,
+    persistent       = True,
+
+    -- APPEARANCE
+	font             = "xft:FiraCode Nerd Font:style=Regular:size=10",
+	-- Just left here for no reason
+	additionalFonts  = [ "xft:Open Sans:style=Regular:size=10" ]
+    bgColor          = "#181814",
+    fgColor          = "#c8b6b8",
+    position         = TopH 30,
+
+    -- MODULES
+    commands         = [
+        Run Date "%a %b %d, %H:%M" "date" 10,
+
+		-- Nice view for the cpu and memory usage, taken from someone's
+		-- config, I can't remeber whose :D
+        Run Cpu [ "-t", "<fc=#8c7f80><bar></fc>",
+                  "-f", ":",
+                  "-H", "75",
+                  "-L", "25",
+                  "-h", "#C15A45",
+                  "-n", "#E4966D",
+                  "-l", "#BE8961" ] 10,
+
+        Run Memory  [ "-t", "<fc=#8c7f80><usedbar></fc>",
+                      "-f", ":",
+                      "-H", "75",
+                      "-L", "25",
+                      "-h", "#C15A45",
+                      "-n", "#E4966D",
+                      "-l", "#BE8961" ] 10,
+
+		-- Current volume
+        Run ComX "pamixer" [ "--get-volume-human" ] "muted" "volume" 1,
+		-- Workspaces and the current window title
+        Run ComX "tail" [ "-n1", "/tmp/.xmonad-workspace-log" ] " Xmonad" "ws" 1,
+        Run ComX "tail" [ "-n1", "/tmp/.xmonad-title-log" ] "" "title" 1,
+		-- Current keyboard layout
+        Run ComX "xkb-switch" [] "en" "lang" 1,
+    ],
+
+    -- DISPLAY
+	alignSep         = "}{",
+	sepChar          = "%",
+	template         = "  <fc=#c8b6b8>%ws%</fc>  <fc=#8c7f80>%title%</fc>}{ <fc=#D2966E>  %volume% </fc><fc=#967D81> %lang% </fc> Cpu: %cpu%  Mem: %memory%  %date% "
+}
