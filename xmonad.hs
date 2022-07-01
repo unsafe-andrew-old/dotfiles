@@ -136,7 +136,7 @@ defaults = def {
         startupHook        = myStartupHook
     }
 
--- Inserted by cat .cache/wal/colors.hs | grep "color0" >> .config/xmonad/xmonad.hs
---             cat .cache/wal/colors.hs | grep "color12" >> .config/xmonad/xmonad.hs
+-- Inserted by cat .cache/wal/colors.hs | grep "color0"  | tail -n1 >> .config/xmonad/xmonad.hs
+--             cat .cache/wal/colors.hs | grep "color12" | tail -n1 >> .config/xmonad/xmonad.hs
 color0="#0d0e0c"
 color12="#C15A45"
